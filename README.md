@@ -23,11 +23,10 @@ This Python project leverages the Gmail API to efficiently process emails from a
 * Download your OAuth credentials file as `credentials.json` and place it in the project directory.
 
 ## Run the script:
-   ```bash
+   bash
    python gmailfetcher.py
 
-
- **Explanation**
+**Explanation**
 
 The provided code does the following:
 
