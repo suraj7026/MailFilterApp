@@ -22,10 +22,6 @@ This Python project leverages the Gmail API to efficiently process emails from a
 * Follow the instructions to enable the Gmail API and the Tasks API in the Google Cloud Console: Quickstart Guide [https://developers.google.com/gmail/api/quickstart/python](https://developers.google.com/gmail/api/quickstart/python)
 * Download your OAuth credentials file as `credentials.json` and place it in the project directory.
 
-## Run the script:
-   ```bash
-   python gmailfetcher.py
-
 ## Explanation
 
 The provided code does the following:
@@ -36,4 +32,9 @@ The provided code does the following:
 * **`get_subject()`:** Extracts the email's subject.
 * **`get_body()`:** Decodes and extracts the textual content of the email's body.
 * **`create_task()`:** Handles authentication and authorization for the Google Tasks API and creates a new task in a specified task list.
+
+
+## Run the script:
+   ```bash
+   python gmailfetcher.py
 
