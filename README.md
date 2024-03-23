@@ -14,19 +14,18 @@ This Python project leverages the Gmail API to efficiently process emails from a
 2. Install required dependencies: 
    ```bash
    pip install google-api-python-client beautifulsoup4
-```
 
+# Setup and Usage
 
+## Obtain Google API Credentials:
 
-Setup and Usage
-Obtain Google API Credentials:
-Follow the instructions to enable the Gmail API and the Tasks API in the Google Cloud Console: Quickstart Guide
-Download your OAuth credentials file as credentials.json and place it in the project directory.
-Run the script:
-bash
-Copy code
+* Follow the instructions to enable the Gmail API and the Tasks API in the Google Cloud Console: Quickstart Guide [https://developers.google.com/gmail/api/quickstart/python](https://developers.google.com/gmail/api/quickstart/python)
+* Download your OAuth credentials file as `credentials.json` and place it in the project directory.
+
+## Run the script:
+
+```bash
 python gmailfetcher.py
-Use code with caution.
 
 Explanation
 The provided code does the following:
