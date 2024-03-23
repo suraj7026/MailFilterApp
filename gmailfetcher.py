@@ -93,7 +93,7 @@ def fetch_emails():
     cutoff_str = cutoff_time.isoformat("T") + "Z"
 
     query = 'from:vitianscdc2025@vitstudent.ac.in (Registration OR Internship OR "2025 Batch") after:{}'.format(cutoff_str)
-    # query = 'from:vitianscdc2025@vitstudent.ac.in (Registration OR Internship OR "2025 Batch") before: 1711183632'
+    # query = 'from:vitianscdc2025@vitstudent.ac.in (Registration OR Internship OR "2025 Batch")'
     try:
         results = service.users().messages().list(userId='me', q=query).execute()
         messages = results.get('messages', [])
@@ -133,45 +133,45 @@ def fetch_emails():
 def get_body(payload):
     """Extracts and returns the text body from an email part.
 
+    Prioritizes the first decoding method. If decoding fails, attempts the second method.
+
     Args:
-        part: An email part object (e.g., from an email.message object)
+        payload: An email part object (e.g., from an email.message object)
 
     Returns:
-        str: The decoded text body, or an empty string if no text body is found.
+        str: The decoded text body, or an error message if decoding fails with both methods.
     """
+
+    # First decoding method
     try:
-        try:
-            message_parts = payload['parts']
-            part = message_parts[0] # first element of the part
-            part_body = part['body']
-            part_data = part_body['data']
-            clean_data = part_data.replace("-","+").replace("_","/")
-            clean_body = base64.b64decode(bytes(clean_data, 'UTF-8'))
-            soup = BeautifulSoup(clean_body,"lxml")
-            message_body = soup.body()
-            return str(message_body)
-        except:
-            return "Error Decoding Message"
+        message_parts = payload['parts']
+        part = message_parts[0]
+        part_body = part['body']
+        part_data = part_body['data']
+        clean_data = part_data.replace("-", "+").replace("_", "/")
+        clean_body = base64.b64decode(bytes(clean_data, 'UTF-8'))
+        soup = BeautifulSoup(clean_body, "lxml")
+        message_body = soup.body()
+        return str(message_body)  # Success!
 
     except Exception as e:
-        pass
-
-
-    try:
+        # First method failed, try the second
         try:
             message_parts = payload['parts'][0]['parts']
-            part = message_parts[0] # first element of the part
+            part = message_parts[0]
             part_body = part['body']
             part_data = part_body['data']
-            clean_data = part_data.replace("-","+").replace("_","/")
+            clean_data = part_data.replace("-", "+").replace("_", "/")
             clean_body = base64.b64decode(bytes(clean_data, 'UTF-8'))
-            soup = BeautifulSoup(clean_body,"lxml")
+            soup = BeautifulSoup(clean_body, "lxml")
             message_body = soup.body()
-            return str(message_body)
-        except:
-            return "Error Decoding Message"
-    except Exception as e:
-        pass
+            return str(message_body)  # Success with second method
+
+        except Exception as e:
+            return f"Error decoding message (both methods failed): {e}"
+
+
+
 # def get_body(part):
 #     if part.get('body').get('data'):
 #         try:
