@@ -1,4 +1,5 @@
-Project Title: Gmail Email Filter and Task Creator
+# Project Title: Gmail Email Filter and Task Creator
+
 Description
 This Python project leverages the Gmail API to efficiently process emails from a specific sender (here, vitianscdc2025@vitstudent.ac.in), searching for keywords related to B.Tech CSE registrations, internships, and form links. When found, relevant information is extracted and used to automatically create tasks in Google Tasks, complete with titles and form links in the notes.
 
