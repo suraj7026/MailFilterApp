@@ -33,6 +33,17 @@ The provided code does the following:
 * **`get_body()`:** Decodes and extracts the textual content of the email's body.
 * **`create_task()`:** Handles authentication and authorization for the Google Tasks API and creates a new task in a specified task list.
 
+## Additional Notes
+
+* Ensure you replace the placeholder sender email address and keywords within the `fetch_emails()` function to customize it for your use case.
+* You may need to modify the task list ID in the `create_task()` function.
+
+## Potential Improvements
+
+* **Error Handling:** Implement more advanced error handling to make the script more robust.
+* **Command-line Interface:** Add a command-line interface (CLI) for flexibility in providing senders, keywords, and task list IDs.
+* **Regular Expressions:** Use regular expressions (regex) for more powerful pattern matching and filtering.
+
 
 ## Run the script:
    ```bash
