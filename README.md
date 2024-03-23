@@ -14,8 +14,7 @@ This Python project leverages the Gmail API to efficiently process emails from a
 2. Install required dependencies: 
    ```bash
    pip install google-api-python-client beautifulsoup4
-
-
+```
 
 
 
