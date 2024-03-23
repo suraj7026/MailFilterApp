@@ -1,18 +1,24 @@
 # Project Title: Gmail Email Filter and Task Creator
 
-Description
+**Description**
 This Python project leverages the Gmail API to efficiently process emails from a specific sender (here, vitianscdc2025@vitstudent.ac.in), searching for keywords related to B.Tech CSE registrations, internships, and form links. When found, relevant information is extracted and used to automatically create tasks in Google Tasks, complete with titles and form links in the notes.
 
-Dependencies
-Google API Client Library for Python (Install with pip install google-api-python-client)
-Beautiful Soup 4 (Install with pip install beautifulsoup4)
-Installation
-Clone this repository.
-Install required dependencies:
-bash
-Copy code
-pip install google-api-python-client beautifulsoup4
-Use code with caution.
+**Dependencies**
+
+* Google API Client Library for Python (Install with `pip install google-api-python-client`)
+* Beautiful Soup 4 (Install with `pip install beautifulsoup4`)
+
+**Installation**
+
+1. Clone this repository.
+2. Install required dependencies: 
+   ```bash
+   pip install google-api-python-client beautifulsoup4
+
+
+
+
+
 Setup and Usage
 Obtain Google API Credentials:
 Follow the instructions to enable the Gmail API and the Tasks API in the Google Cloud Console: Quickstart Guide
