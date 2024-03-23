@@ -26,7 +26,7 @@ This Python project leverages the Gmail API to efficiently process emails from a
    bash
    python gmailfetcher.py
 
-**Explanation**
+##Explanation
 
 The provided code does the following:
 
