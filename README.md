@@ -23,19 +23,21 @@ This Python project leverages the Gmail API to efficiently process emails from a
 * Download your OAuth credentials file as `credentials.json` and place it in the project directory.
 
 ## Run the script:
+   ```bash
+   python gmailfetcher.py
 
-```bash
-python gmailfetcher.py
 
-Explanation
+ **Explanation**
+
 The provided code does the following:
 
-Imports necessary libraries: pickle, base64, os.path, re, email, bs4, and the Google API libraries.
-get_gmail_service(): Handles authentication and authorization for the Gmail API, providing a service object.
-fetch_emails(): Queries the Gmail inbox for specific emails, parses them, and filters them based on keywords within the email body.
-get_subject(): Extracts the email's subject.
-get_body(): Decodes and extracts the textual content of the email's body.
-create_task(): Handles authentication and authorization for the Google Tasks API and creates a new task in a specified task list.
+* **Imports necessary libraries:** `pickle`, `base64`, `os.path`, `re`, `email`, `bs4`, and the Google API libraries.
+* **`get_gmail_service()`:** Handles authentication and authorization for the Gmail API, providing a service object.
+* **`fetch_emails()`:** Queries the Gmail inbox for specific emails, parses them, and filters them based on keywords within the email body.
+* **`get_subject()`:** Extracts the email's subject.
+* **`get_body()`:** Decodes and extracts the textual content of the email's body.
+* **`create_task()`:** Handles authentication and authorization for the Google Tasks API and creates a new task in a specified task list.
+
 Additional Notes
 Ensure you replace the placeholder sender email address and keywords within the fetch_emails() function to customize it for your use case.
 You may need to modify the task list ID in the create_task() function.
