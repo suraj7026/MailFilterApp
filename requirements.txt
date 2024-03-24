@@ -1,0 +1,4 @@
+streamlit~=1.32.2
+python-dateutil~=2.9.0.post0
+beautifulsoup4~=4.12.3
+datefinder~=0.7.3
