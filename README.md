@@ -32,6 +32,9 @@ The provided code does the following:
 * **`get_subject()`:** Extracts the email's subject.
 * **`get_body()`:** Decodes and extracts the textual content of the email's body.
 * **`create_task()`:** Handles authentication and authorization for the Google Tasks API and creates a new task in a specified task list.
+* **`find_registration_date()`:** Finds the registration deadline date.
+* **`normalize_date()`:** Converts Datetime to unix timestamp.
+
 
 ## Additional Notes
 
